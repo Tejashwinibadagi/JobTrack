@@ -1,0 +1,804 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>JobTrack | Fresher Job Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">J</div>
+
+            <div>
+                <h2>JobTrack</h2>
+                <p>Career Launchpad</p>
+            </div>
+        </div>
+
+        <nav class="navigation">
+            <a href="#dashboard" class="nav-link active">Dashboard</a>
+            <a href="#find-jobs" class="nav-link">Find Jobs</a>
+            <a href="#official-opportunities" class="nav-link">Official Careers</a>
+            <a href="#applications" class="nav-link">My Applications</a>
+            <a href="#resume-matcher" class="nav-link">Resume Matcher</a>
+        </nav>
+
+        <div class="sidebar-footer">
+            <p>Built for your career journey</p>
+            <span>BE CSE · 2026 Batch</span>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- HEADER -->
+        <header class="topbar">
+
+            <div>
+                <p class="eyebrow">YOUR CAREER WORKSPACE</p>
+
+                <h1>Job Application Tracker</h1>
+
+                <p class="subtitle">
+                    Discover opportunities, organise applications, and track progress.
+                </p>
+            </div>
+
+            <a href="#find-jobs" class="primary-button header-button">
+                Explore Jobs
+            </a>
+
+        </header>
+
+
+        <!-- DASHBOARD -->
+        <section id="dashboard" class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">OVERVIEW</p>
+                    <h2>Your Dashboard</h2>
+                </div>
+
+                <span class="profile-badge">
+                    BE CSE · Fresher · 2026
+                </span>
+
+            </div>
+
+            <div class="stats-grid">
+
+                <article class="stat-card">
+                    <div class="stat-icon total-icon">01</div>
+                    <p>Total Applications</p>
+                    <h3 id="totalCount">0</h3>
+                    <span>Applications tracked</span>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon applied-icon">02</div>
+                    <p>Applied</p>
+                    <h3 id="appliedCount">0</h3>
+                    <span>Applications submitted</span>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon interview-icon">03</div>
+                    <p>Interviews</p>
+                    <h3 id="interviewCount">0</h3>
+                    <span>Interview stage</span>
+                </article>
+
+                <article class="stat-card">
+                    <div class="stat-icon selected-icon">04</div>
+                    <p>Selected</p>
+                    <h3 id="selectedCount">0</h3>
+                    <span>Successful outcomes</span>
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- FIND JOBS -->
+        <section id="find-jobs" class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">DISCOVER OPPORTUNITIES</p>
+
+                    <h2>Find Fresher IT Jobs</h2>
+
+                    <p class="section-description">
+                        Search job listings and check eligibility before applying.
+                    </p>
+                </div>
+
+            </div>
+
+            <div class="search-panel">
+
+                <form id="jobSearchForm" class="job-search-form">
+
+                    <div class="form-group search-keyword">
+
+                        <label for="jobSearch">
+                            Job title or keyword
+                        </label>
+
+                        <input
+                            type="text"
+                            id="jobSearch"
+                            placeholder="Java Developer, Software Engineer..."
+                            value="java developer">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label for="jobLocation">
+                            Eligible location
+                        </label>
+
+                        <select id="jobLocation">
+
+                            <option value="">All Locations</option>
+
+                            <option value="Bengaluru">
+                                Bengaluru eligibility
+                            </option>
+
+                            <option value="Hyderabad">
+                                Hyderabad eligibility
+                            </option>
+
+                            <option value="Pune">
+                                Pune eligibility
+                            </option>
+
+                            <option value="Chennai">
+                                Chennai eligibility
+                            </option>
+
+                            <option value="Mumbai">
+                                Mumbai eligibility
+                            </option>
+
+                            <option value="Remote">
+                                Remote
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <button
+                        type="submit"
+                        id="searchJobsButton"
+                        class="primary-button">
+
+                        Search Jobs
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="clearJobSearchButton"
+                        class="secondary-button">
+
+                        Clear
+
+                    </button>
+
+                </form>
+
+            </div>
+
+
+            <p
+                id="jobSearchMessage"
+                class="message"
+                aria-live="polite">
+
+                Search for jobs to see available listings.
+
+            </p>
+
+
+            <div class="notice-box">
+
+                <strong>Before you apply:</strong>
+
+                Job listings may have country, degree, experience, or other
+                restrictions. Check the original listing before applying.
+                Search results are not automatically verified fresher vacancies.
+
+            </div>
+
+
+            <div id="jobResults" class="job-results">
+
+                <div class="empty-state">
+
+                    <div class="empty-icon">⌕</div>
+
+                    <h3>Ready to find your next opportunity?</h3>
+
+                    <p>
+                        Search by job title to load available listings.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- OFFICIAL CAREERS -->
+        <section id="official-opportunities" class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">TRUSTED SOURCES</p>
+
+                    <h2>Official Fresher Opportunities</h2>
+
+                    <p class="section-description">
+                        Explore employer career websites for graduate and entry-level roles.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="notice-box">
+
+                These links lead to company career websites, not necessarily
+                currently open vacancies. Check the eligibility requirements
+                for your graduation year before applying.
+
+            </div>
+
+
+            <div class="official-jobs-grid">
+
+
+                <!-- TCS -->
+                <article class="official-job-card">
+
+                    <div class="company-heading">
+
+                        <div class="company-logo tcs-logo">T</div>
+
+                        <div>
+                            <h3>TCS</h3>
+                            <span>Technology services</span>
+                        </div>
+
+                    </div>
+
+                    <p class="role-label">Roles to explore</p>
+
+                    <p>
+                        Graduate Trainee · Software Development · Entry Level
+                    </p>
+
+                    <div class="job-tags">
+                        <span>Graduate hiring</span>
+                        <span>India</span>
+                    </div>
+
+                    <p class="job-status status-check">
+                        Vacancy status: Check official listing
+                    </p>
+
+                    <a
+                        href="https://www.tcs.com/careers/india/entry-level"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="company-button">
+
+                        Visit Official Careers ↗
+
+                    </a>
+
+                </article>
+
+
+                <!-- INFOSYS -->
+                <article class="official-job-card">
+
+                    <div class="company-heading">
+
+                        <div class="company-logo infosys-logo">I</div>
+
+                        <div>
+                            <h3>Infosys</h3>
+                            <span>Digital services</span>
+                        </div>
+
+                    </div>
+
+                    <p class="role-label">Roles to explore</p>
+
+                    <p>
+                        Systems Engineer · Graduate · Software Development
+                    </p>
+
+                    <div class="job-tags">
+                        <span>Graduate roles</span>
+                        <span>India</span>
+                    </div>
+
+                    <p class="job-status status-check">
+                        Vacancy status: Check official listing
+                    </p>
+
+                    <a
+                        href="https://www.infosys.com/careers/graduates.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="company-button">
+
+                        Visit Graduate Careers ↗
+
+                    </a>
+
+                </article>
+
+
+                <!-- COGNIZANT -->
+                <article class="official-job-card">
+
+                    <div class="company-heading">
+
+                        <div class="company-logo cognizant-logo">C</div>
+
+                        <div>
+                            <h3>Cognizant</h3>
+                            <span>Technology consulting</span>
+                        </div>
+
+                    </div>
+
+                    <p class="role-label">Roles to explore</p>
+
+                    <p>
+                        GenC · Graduate Technology · Associate Roles
+                    </p>
+
+                    <div class="job-tags">
+                        <span>Graduate program</span>
+                        <span>India</span>
+                    </div>
+
+                    <p class="job-status status-check">
+                        Vacancy status: Check official listing
+                    </p>
+
+                    <a
+                        href="https://careers.cognizant.com/india-en/pathways-to-cognizant/genc-program/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="company-button">
+
+                        Visit GenC Careers ↗
+
+                    </a>
+
+                </article>
+
+
+                <!-- WIPRO -->
+                <article class="official-job-card">
+
+                    <div class="company-heading">
+
+                        <div class="company-logo wipro-logo">W</div>
+
+                        <div>
+                            <h3>Wipro</h3>
+                            <span>Technology services</span>
+                        </div>
+
+                    </div>
+
+                    <p class="role-label">Roles to explore</p>
+
+                    <p>
+                        Project Engineer · Graduate · Software Roles
+                    </p>
+
+                    <div class="job-tags">
+                        <span>Entry level</span>
+                        <span>India</span>
+                    </div>
+
+                    <p class="job-status status-check">
+                        Vacancy status: Check official listing
+                    </p>
+
+                    <a
+                        href="https://careers.wipro.com/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="company-button">
+
+                        Visit Official Careers ↗
+
+                    </a>
+
+                </article>
+
+
+                <!-- ACCENTURE -->
+                <article class="official-job-card">
+
+                    <div class="company-heading">
+
+                        <div class="company-logo accenture-logo">A</div>
+
+                        <div>
+                            <h3>Accenture</h3>
+                            <span>Technology consulting</span>
+                        </div>
+
+                    </div>
+
+                    <p class="role-label">Roles to explore</p>
+
+                    <p>
+                        Associate Software Engineer · Technology Analyst
+                    </p>
+
+                    <div class="job-tags">
+                        <span>Entry level</span>
+                        <span>India</span>
+                    </div>
+
+                    <p class="job-status status-check">
+                        Vacancy status: Check official listing
+                    </p>
+
+                    <a
+                        href="https://www.accenture.com/in-en/careers"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="company-button">
+
+                        Visit Official Careers ↗
+
+                    </a>
+
+                </article>
+
+            </div>
+
+        </section>
+
+
+        <!-- MY APPLICATIONS -->
+        <section id="applications" class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">STAY ORGANIZED</p>
+
+                    <h2>My Applications</h2>
+
+                    <p class="section-description">
+                        Track saved jobs, applications, interviews, and results.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="table-toolbar">
+
+                <div class="form-group application-search">
+
+                    <label for="searchInput">
+                        Search your applications
+                    </label>
+
+                    <input
+                        type="text"
+                        id="searchInput"
+                        placeholder="Search company, role, or status...">
+
+                </div>
+
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+                            <th>Company</th>
+                            <th>Job Role</th>
+                            <th>Application Date</th>
+                            <th>Status</th>
+                            <th>Application Link</th>
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="applicationTable">
+
+                        <tr>
+                            <td colspan="5">
+                                Loading applications...
+                            </td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+            <p class="table-help">
+
+                Change a status using the dropdown. Your changes are saved
+                through the backend.
+
+            </p>
+
+        </section>
+
+
+        <!-- RESUME MATCHER -->
+        <section id="resume-matcher" class="section">
+
+            <div class="section-heading">
+
+                <div>
+                    <p class="eyebrow">CAREER PREPARATION</p>
+
+                    <h2>Resume Matcher</h2>
+
+                    <p class="section-description">
+                        Upload your resume and view the skills detected by the backend.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="resume-panel">
+
+                <div class="resume-icon">PDF</div>
+
+                <div class="resume-content">
+
+                    <h3>Analyze your resume</h3>
+
+                    <p>
+                        Choose a PDF or Word document. JobTrack can extract
+                        recognized skill keywords from your resume.
+                        Detected keywords do not measure your actual proficiency.
+                    </p>
+
+
+                    <div class="resume-controls">
+
+                        <input
+                            type="file"
+                            id="resumeFile"
+                            accept=".pdf,.doc,.docx">
+
+
+                        <button
+                            type="button"
+                            id="uploadButton"
+                            class="primary-button">
+
+                            Upload Resume
+
+                        </button>
+
+                    </div>
+
+
+                    <p
+                        id="fileMessage"
+                        class="message"
+                        aria-live="polite">
+
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- APPLICATION FORM -->
+        <section id="applicationFormSection" class="section">
+
+            <form
+                id="applicationForm"
+                class="application-form"
+                style="display: none;">
+
+                <div class="section-heading">
+
+                    <div>
+                        <p class="eyebrow">APPLICATION DETAILS</p>
+
+                        <h2>Track a Job Application</h2>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+
+                    <!-- COMPANY -->
+                    <div class="form-group">
+
+                        <label for="companyId">Company</label>
+
+                        <select id="companyId" required>
+
+                            <option value="">
+                                Select Company
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- JOB ROLE -->
+                    <div class="form-group">
+
+                        <label for="jobRole">Job Role</label>
+
+                        <input
+                            type="text"
+                            id="jobRole"
+                            placeholder="Java Developer"
+                            required>
+
+                    </div>
+
+
+                    <!-- APPLICATION DATE -->
+                    <div class="form-group">
+
+                        <label for="applicationDate">
+                            Application Date
+                        </label>
+
+                        <input
+                            type="date"
+                            id="applicationDate"
+                            required>
+
+                    </div>
+
+
+                    <!-- APPLICATION STATUS -->
+                    <div class="form-group">
+
+                        <label for="applicationStatus">
+                            Application Status
+                        </label>
+
+                        <select id="applicationStatus" required>
+
+                            <option value="Saved">Saved</option>
+                            <option value="Applied">Applied</option>
+                            <option value="Interview">Interview</option>
+                            <option value="Selected">Selected</option>
+                            <option value="Rejected">Rejected</option>
+
+                        </select>
+
+                    </div>
+
+
+                    <!-- JOB LINK -->
+                    <div class="form-group full-width">
+
+                        <label for="applyLink">
+                            Official Job Link
+                        </label>
+
+                        <input
+                            type="url"
+                            id="applyLink"
+                            placeholder="https://company.com/careers/job-id">
+
+                    </div>
+
+                </div>
+
+
+                <p
+                    id="formMessage"
+                    class="message"
+                    aria-live="polite">
+
+                </p>
+
+
+                <div class="form-actions">
+
+                    <button
+                        type="submit"
+                        id="saveApplicationButton"
+                        class="primary-button">
+
+                        Save Application
+
+                    </button>
+
+
+                    <button
+                        type="button"
+                        id="cancelFormButton"
+                        class="secondary-button">
+
+                        Cancel
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </section>
+
+
+        <!-- FOOTER -->
+        <footer class="page-footer">
+
+            <p>
+                JobTrack · Organize your search.
+                Track your progress. Build your career.
+            </p>
+
+        </footer>
+
+    </main>
+
+</div>
+
+
+<!-- JAVASCRIPT -->
+<script src="script.js"></script>
+
+</body>
+</html>
