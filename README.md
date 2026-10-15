@@ -1,40 +1,39 @@
-# JobTrack – Job Application Tracking System
+# JobTrack – Job Application Tracker
 
-JobTrack is a job application tracking system designed to help users organize and manage their job search in one place.
-
-## Features
-
-- Track job applications and their statuses.
-- Manage company information.
-- Search for job opportunities.
-- Upload resumes.
-- View and manage application details.
+## About
+JobTrack is a web application that helps users manage and track their job applications in one place.
 
 ## Technologies Used
-
 - Java
 - Spring Boot
 - MySQL
 - HTML
 - CSS
 - JavaScript
-- REST APIs
+- REST API
+
+## Features
+- View job applications
+- Add new job applications
+- Track application status
+- Search for job opportunities
+- Store application records in MySQL
+- Upload resumes
 
 ## Project Structure
-
-- `src/` – Java backend source code
-- `pom.xml` – Maven dependencies and project configuration
-- `index.html` – Frontend page
-- `style.css` – Frontend styling
-- `script.js` – Frontend functionality
+- `backend/` – Spring Boot REST API and database integration
+- `frontend/` – HTML, CSS and JavaScript user interface
 
 ## How to Run
 
-1. Configure the MySQL database.
-2. Update the database configuration in the backend.
-3. Run the Spring Boot application.
-4. Open `index.html` in a browser.
+### Backend
+1. Install Java and MySQL.
+2. Create the required MySQL database.
+3. Configure database credentials using environment variables.
+4. Start the Spring Boot application.
+
+### Frontend
+Open `frontend/index.html` in a browser after starting the backend.
 
 ## Author
-
-JobTrack Project
+Tejashwini Badagi
