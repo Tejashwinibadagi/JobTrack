@@ -1,5 +1,4 @@
 const API_URL = "https://jobtrack-backend-0j2s.onrender.com/api";
-
 let applications = [];
 let companies = [];
 let currentJobs = [];
