@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8080/api";
+const API_URL = "http://jobtrack-backend.onrender.com/api";
 
 let applications = [];
 let companies = [];
