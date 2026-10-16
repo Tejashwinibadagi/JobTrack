@@ -1,4 +1,3 @@
-
 package jobtracker.controller;
 
 import java.util.List;
@@ -34,13 +33,13 @@ public class JobApplicationController {
         this.companyRepository = companyRepository;
     }
 
-    // Get all job applications
+    // Get all saved job applications
     @GetMapping
     public List<JobApplication> getAllApplications() {
         return jobApplicationRepository.findAll();
     }
 
-    // Add a new job application
+    // Save a new job application
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public JobApplication addApplication(
@@ -79,8 +78,13 @@ public class JobApplicationController {
 
         String cleanStatus = status.replace("\"", "").trim();
 
-        if (!List.of("Saved", "Applied", "Interview", "Selected", "Rejected")
-                .contains(cleanStatus)) {
+        if (!List.of(
+                "Saved",
+                "Applied",
+                "Interview",
+                "Selected",
+                "Rejected"
+        ).contains(cleanStatus)) {
 
             throw new ResponseStatusException(
                     HttpStatus.BAD_REQUEST,
@@ -92,4 +96,3 @@ public class JobApplicationController {
         return jobApplicationRepository.save(application);
     }
 }
-
